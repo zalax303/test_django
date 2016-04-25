@@ -1,3 +1,4 @@
+#coding:utf-8
 """myforum URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -20,4 +21,6 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', "block.views.block_list"),
+
 ]
