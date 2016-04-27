@@ -8,3 +8,6 @@ from models import Block
 def block_list(request):
 	blocks = Block.objects.all().order_by("-id")  # 负号代表倒序排序
 	return render_to_response("block_list.html", {"blocks": blocks})  # {}字典里面代表熏染变量
+
+# def index(request): #静态页面
+# 	return render(request, "index.html")
