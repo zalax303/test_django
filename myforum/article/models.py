@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-from django.models import Block
+from block.models import Block
 
 
 # Create your models here.

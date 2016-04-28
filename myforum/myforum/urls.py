@@ -23,5 +23,7 @@ urlpatterns = [
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^$', "block.views.block_list"),
 	# url(r'^$', "block.views.index"),
+    url(r'^article/', include("article.urls")),
+
 
 ]
