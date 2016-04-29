@@ -16,7 +16,7 @@ class Article(models.Model):
 	update_time = models.DateTimeField(auto_now=True)
 
 	def __unicode__(self):
-		return self.name
+		return self.title
 
 	class Meta:
 		verbose_name = u"文章"
