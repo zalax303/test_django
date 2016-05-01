@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+<!--使用模版-->
 {% block index %}
 
 {% for b in blocks %}
 <div class="panel panel-default">
   <div class="panel-heading">
     <a href="{% url 'article_list' b.id %}">{{ b.name }}</a>
+    <!-- article_list是一个控制器名字 即article下面的urls.py中name=article_list,但是该控制器需要一个参数block_id 这里用b.id来传值-->
     <span class="pull-right">管理员:{{ b.manager.username }}</span>
   </div>
   <div class="panel-body">
