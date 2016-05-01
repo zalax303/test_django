@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', "block.views.block_list", name="block_list"),
     # url(r'^$', "block.views.index"),
-    url(r'^article/', include("article.urls")),
+    url(r'^article/', include("article.urls")),  #代表使用article下面的urls.py来处理
 
 
 ]
