@@ -1,3 +1,4 @@
+#coding:utf-8
 """
 Django settings for myforum project.
 
@@ -57,7 +58,8 @@ ROOT_URLCONF = 'myforum.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        # 这里需要加上base.html的路径表示除了app下面的tmplates的html还有那些html会被搜索#
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

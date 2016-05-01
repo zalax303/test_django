@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Python部落论坛</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <!--<h1>Python部落论坛</h1>-->
+    <!--{% for block in blocks %}-->
+    <!--<div class="blockItem">-->
+       <!--{{ block.name }}-->
+       <!--{{ block.desc }}-->
+       <!--{{ block.manager.username }}-->
+    <!--</div>-->
+    <!--{% endfor %}-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">&nbsp;</div> <!-- &nbsp;代表空白 为了使布局生效!-->
+            <div class="col-md-8">
+
+                <div class="jumbotron">
+                  <center><h1>Python部落论坛</h1></center>
+                </div>
+
+                {% for b in blocks %}
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <a href="{% url 'article_list' b.id %}">{{ b.name }}</a>
+                    <span class="pull-right">管理员:{{ b.manager.username }}</span>
+                  </div>
+                  <div class="panel-body">
+                    {{ b.desc }}
+                  </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="col-md-2">&nbsp;</div>
+        </div>
+    </div>
+
+
+  </body>
+</html>
