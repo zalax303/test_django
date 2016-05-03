@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
+{% block input %}
 <form method="POST" action=""> {% csrf_token %}
-   <input type="text" name="title" />
-   <textarea name=”content”></textarea>
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">标题</span>
+        <input type="text" class="form-control" placeholder="请输入标题" aria-describedby="basic-addon1" name="title">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon2">内容</span>
+        <textarea name="content" class="form-control" placeholder="请输入内容" aria-describedby="basic-addon2" rows="20"></textarea>
+    </div>
+
    <button type="submit">发表</button>
 </form>
+{% endblock %}
