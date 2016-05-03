@@ -11,17 +11,17 @@
 
     <table class="table table_bordered">
         <tr>
-            <th>状态</th>
             <th>标题</th>
             <th>作者</th>
+            <th>状态</th>
             <th>最后更新时间</th>
         </tr>
         {% for article in articles %}
         <tr>
+            <td><a href="{% url 'article_detail' article.id %}">{{article.title}}</a></td>
+            <td>{{article.owner}}</td>
             <td>{{article.get_status_display}}</td>
             <!-- get_字段名_dispaly主要用于枚举的时候输出枚举值,这里是输出汉字-->
-            <td>{{article.owner}}</td>
-            <td>{{article.title}}</td>
             <td>{{article.update_time|date:"Y-m-d P"}}</td>
         </tr>
         {% endfor %}
