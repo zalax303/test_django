@@ -107,7 +107,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# EMAIL_HOST = "smtp.qq.com"
-# EMAIL_PORT = 25
-# EMAIL_HOST_USER = "shishusaiwai@vip.qq.com"
-# EMAIL_HOST_PASSWORD = "xxxxx"
+EMAIL_HOST = "smtp.qq.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "281966776@qq.com"
+EMAIL_HOST_PASSWORD = "<19850313hhz>"
