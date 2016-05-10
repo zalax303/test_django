@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render_to_response,redirect
+from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 
 from models import ActivateCode
@@ -32,16 +32,15 @@ def register(request):
 			user.is_active = 0
 			user.save()
 
-			new_code = str(uuid.uuid4().replace("-", ""))   #生成随机码
+			new_code = str(uuid.uuid4()).replace("-", "")   #生成随机码
 			expire_time = datetime.datetime.now() + datetime.timedelta(days=2)  #需要两天之内激活
 			code_record = ActivateCode(owner=user, code=new_code, expire_timestamp=expire_time)
 			code_record.save()
 
 			activate_link = "http://%s%s" % (request.get_host(), reverse("usercenter_activate", args=[new_code]))
-			send_mail(u"发送激活邮件", u"你的激活链接为%s" % (activate_link,), '281966779@qq.com', [email] ,
-					  fail_silently=False)  #发送失败需要报错
+			send_mail(u"发送激活邮件", u"你的激活链接为%s" % (activate_link,), '281966776@qq.com', [email] ,fail_silently=False)  #发送失败需要报错
 		else:
-			return render_to_response("usercenter_register.html", {"error":error},
+			return render_to_response("usercenter_register.html", {"error": error},
 									context_instance=RequestContext(request))
 		return redirect(reverse("login"))
 

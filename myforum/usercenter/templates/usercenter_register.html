@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    <p>aaaaaa</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block input %}
+<form method="POST" action=""> {% csrf_token %}
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        注册
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">用户名:</span>
+      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="username">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon2">邮箱:</span>
+      <input type="email" class="form-control" placeholder="mail" aria-describedby="basic-addon2" name="email">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon3">密码:</span>
+      <input type="password" class="form-control" placeholder="" aria-describedby="basic-addon3" name="password">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon4">确认密码:</span>
+      <input type="password" class="form-control" placeholder="" aria-describedby="basic-addon4" name="re_password">
+      </div>
+      <button type="submit" >注册</button>
+    </div>
+
+</form>
+
+{% endblock %}
