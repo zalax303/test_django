@@ -25,6 +25,6 @@ urlpatterns = [
     # url(r'^$', "block.views.index"),
     url(r'^article/', include("article.urls")),  #代表使用article下面的urls.py来处理
     url(r'^usercenter/', include("usercenter.urls")),
-    url('^', include('django.contrib.auth.urls')),
+    url('^accounts/', include('django.contrib.auth.urls')),
 
 ]
