@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% block input %}
+<!--报错处理-->
+<div class="row">
+    <div class="col-md-12">
+        {% if error %}
+            <div class="alter alter-danger">{{error}}</div>
+        {% endif %}
+    </div>
+</div>
+
 <form method="POST" action=""> {% csrf_token %}
     <div class="panel panel-primary">
       <div class="panel-body">

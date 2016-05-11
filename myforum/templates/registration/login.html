@@ -21,6 +21,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">用户名</span>
                     <input id="id_username" maxlength="254" name="username" type="text" class="from-control" />
+                    <!-- django登入页面必须要有个username和password两个name-->
                 </div>
                 <br />
                 <div class="input-group">
@@ -30,6 +31,7 @@
                 <br />
                 <input type="submit" class="bin bin-primary" value="登入" />
                 <input type="hidden" name="next" value="{{next}}" />
+                <!-- next 会记录我要去的url中(如果账号和密码正确，则登录成功，页面将会重定向到next指定的URL中)-->
                 </form>
             </div>
             <div class="panel-footer">
