@@ -30,6 +30,7 @@
                 </div>
                 <br />
                 <input type="submit" class="btn btn-primary" value="登入" />
+                     <!-- 通过setting.py中的LOGIN_REDIRECT_URL 来控制登入后需要跳转的页面-->
                 <input type="hidden" name="next" value="{{next}}" />
                 <!-- next 会记录我要去的url中(如果账号和密码正确，则登录成功，页面将会重定向到next指定的URL中)-->
                 </form>
