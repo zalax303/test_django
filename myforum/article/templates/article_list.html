@@ -44,9 +44,9 @@
             {% endif %}
             {% for no in page_links %}
             <li {% if current_no == no %} class="active"{%endif%}>
-                <a href="?page_no={{ no }}}">{{% no %}}}</a>
+                <a href="?page_no={{ no }}">{{ no }}</a>
             </li>
-            {% endif %}
+            {% endfor %}
             {% if has_next %}
             <li>
                 <a href="?page_no={{ next_link }}" aria-label="Next">
